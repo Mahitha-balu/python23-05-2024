@@ -1,0 +1,22 @@
+import math
+
+def check(n):
+    d = int(math.sqrt(n))
+    return d * d != n
+
+def largestNonPerfectSquareNumber(arr):
+    maxi = -1
+    for num in arr:
+        if check(num):
+            maxi = max(maxi, num)
+    return maxi
+
+# Taking input from the user for the array elements
+print("Enter the elements of the array separated by spaces:")
+arr = list(map(int, input().split()))
+
+result = largestNonPerfectSquareNumber(arr)
+if result == -1:
+    print("There is no number that is not a perfect square.")
+else:
+    print("Largest number that is not a perfect square:", result)
